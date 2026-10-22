@@ -157,6 +157,9 @@
     $("#reel-label").textContent = "Reel " + (Math.floor(current / PER_REEL) + 1) + " of " + Math.ceil(QUESTIONS.length / PER_REEL);
     $("#q-count").textContent = "Intertitle No. " + (current + 1) + " / " + QUESTIONS.length;
     $("#q-text").textContent = q.q;
+    $("#host-quip").textContent = (window.HOST_LINES || [])[current] || "";
+    // The zombie surfaces every few cards, never on two in a row
+    $(".zombie-card").classList.toggle("up", current % 3 === 2);
 
     var list = $("#options");
     list.innerHTML = "";

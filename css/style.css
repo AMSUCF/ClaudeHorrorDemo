@@ -576,3 +576,138 @@ h1 .deco { display: block; font-size: .7em; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .fx-flicker, .fx-scratches { display: none; }
 }
+
+/* ---------- The Bijou staff: reaper usher & zombie heckler ---------- */
+
+.reaper, .zombie-marquee, .zombie-card, .zombie-rise {
+  display: block;
+  height: auto;
+  filter: sepia(.12) drop-shadow(0 8px 12px rgba(0, 0, 0, .65));
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.host { margin: 0; display: flex; align-items: flex-end; gap: 12px; }
+.host .reaper {
+  transform-origin: 50% 100%;
+  animation: sway 5s ease-in-out infinite;
+  filter: sepia(.12) drop-shadow(0 0 22px rgba(209, 31, 47, .3)) drop-shadow(0 8px 12px rgba(0, 0, 0, .65));
+}
+@keyframes sway { 0%, 100% { transform: rotate(-2deg); } 50% { transform: rotate(2deg); } }
+
+.bubble {
+  position: relative;
+  padding: 10px 14px;
+  background: var(--paper);
+  color: #1a0f05;
+  border: 2px solid #1a0f05;
+  border-radius: 14px;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, .55);
+  font-size: 15px;
+  line-height: 1.35;
+}
+/* Tail pointing left, toward the reaper */
+.bubble::before, .bubble::after {
+  content: "";
+  position: absolute;
+  bottom: 14px;
+  border-style: solid;
+}
+.bubble::before { left: -14px; border-width: 8px 14px 8px 0; border-color: transparent #1a0f05 transparent transparent; }
+.bubble::after { left: -10px; bottom: 16px; border-width: 6px 11px 6px 0; border-color: transparent var(--paper) transparent transparent; }
+
+/* Title screen: the usher at the box office */
+.box-office {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+}
+.box-office .ticket { margin: 0 0 18px; }
+.host-usher { flex-direction: column-reverse; align-items: center; gap: 4px; }
+.host-usher .reaper { width: 150px; }
+.host-usher .bubble { max-width: 220px; text-align: center; margin-bottom: 4px; }
+/* Tail pointing down, toward the usher's hood */
+.host-usher .bubble::before { left: 50%; bottom: -14px; margin-left: -8px; border-width: 14px 8px 0 8px; border-color: #1a0f05 transparent transparent transparent; }
+.host-usher .bubble::after { left: 50%; bottom: -10px; margin-left: -6px; border-width: 11px 6px 0 6px; border-color: var(--paper) transparent transparent transparent; }
+
+/* Zombie hanging off the marquee corner */
+.zombie-marquee {
+  position: absolute;
+  right: -34px;
+  bottom: -44px;
+  width: 96px;
+  z-index: 3;
+  transform: rotate(14deg);
+  transform-origin: 30% 20%;
+  animation: dangle 3.2s ease-in-out infinite;
+}
+@keyframes dangle {
+  0%, 100% { transform: rotate(14deg); }
+  50% { transform: rotate(4deg) translateY(-3px); }
+}
+
+/* Quiz: the reaper hosts each intertitle */
+.host-quiz { margin: 0 0 4px; }
+.host-quiz .reaper { width: 74px; flex: none; }
+.host-quiz .bubble { margin-bottom: 18px; max-width: min(520px, 70%); }
+
+/* Zombie periodically peeks over the top of the card */
+.card-stage { position: relative; }
+.card-stage .intertitle { z-index: 1; }
+.zombie-card {
+  position: absolute;
+  top: -66px;
+  right: 7%;
+  width: 78px;
+  z-index: 0;
+  transform: translateY(70px) rotate(0deg);
+  transition: transform .5s cubic-bezier(.3, 1.6, .5, 1);
+}
+.zombie-card.up { transform: translateY(0) rotate(-9deg); transition-delay: .35s; }
+
+/* Results: the reaper presents the bill */
+.host-results { justify-content: center; margin-top: 18px; }
+.host-results .reaper { width: 96px; flex: none; }
+.host-results .bubble { max-width: 300px; margin-bottom: 22px; text-align: left; }
+
+/* Results: a zombie rises beneath "Fin?" — it's never really over */
+.fin-wrap { position: relative; height: 210px; margin-top: 34px; overflow: hidden; }
+.fin-wrap .fin { margin: 0; }
+.zombie-rise {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 120px;
+  margin-left: -60px;
+  transform: translateY(14%);
+  animation: rise 2.4s cubic-bezier(.2, .8, .3, 1) 1.2s both, bob 4s ease-in-out 3.6s infinite;
+}
+@keyframes rise { from { transform: translateY(110%); } to { transform: translateY(14%); } }
+@keyframes bob { 0%, 100% { transform: translateY(14%) rotate(0deg); } 50% { transform: translateY(10%) rotate(-4deg); } }
+.grave-dirt {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 280px;
+  height: 38px;
+  margin-left: -140px;
+  background:
+    radial-gradient(circle at 20% 30%, #4a3523 0 5px, transparent 6px),
+    radial-gradient(circle at 70% 40%, #3a2818 0 4px, transparent 5px),
+    radial-gradient(circle at 45% 20%, #5a4230 0 3px, transparent 4px),
+    radial-gradient(ellipse at 50% 100%, #2e2015 0 62%, transparent 64%);
+}
+
+@media (max-width: 600px) {
+  .host-usher .reaper { width: 110px; }
+  .host-usher .bubble { font-size: 14px; }
+  .box-office .ticket { margin: 0; }
+  .zombie-marquee { width: 66px; right: -18px; bottom: -34px; }
+  .host-quiz .reaper { width: 56px; }
+  .host-quiz .bubble { max-width: none; font-size: 14px; margin-bottom: 12px; margin-right: 64px; }
+  .zombie-card { width: 60px; top: -50px; right: 4%; }
+  .host-results .reaper { width: 74px; }
+  .host-results .bubble { font-size: 14px; }
+}

@@ -30,6 +30,7 @@
         <p class="presents">The Bijou Picture House proudly presents</p>
         <h1 id="title-h"><span class="drip">Midnight</span> <span class="deco">Matinee</span></h1>
         <p class="tagline">A Classic Horror Picture Selector</p>
+        <img class="zombie-marquee" src="img/zombie-head.png" alt="" width="231" height="248">
       </div>
 
       <div class="intro">
@@ -37,11 +38,17 @@
         <p class="small">From the silent shadows of the 1920s to the VHS splatter of the 1980s, we'll pick <strong>3&ndash;5 classic horror films</strong> matched to your nerves, your stomach and your company.</p>
       </div>
 
-      <button id="btn-start" class="ticket" type="button">
-        <span class="ticket-admit">Admit One</span>
-        <span class="ticket-sub">Begin the picture</span>
-        <span class="ticket-no" aria-hidden="true">Nº 001031</span>
-      </button>
+      <div class="box-office">
+        <figure class="host host-usher">
+          <img class="reaper" src="img/cartoon-grim-reaper.png" alt="The Bijou's grim reaper usher" width="337" height="400">
+          <figcaption class="bubble">Tickets, please. Cash, card&hellip; or soul.</figcaption>
+        </figure>
+        <button id="btn-start" class="ticket" type="button">
+          <span class="ticket-admit">Admit One</span>
+          <span class="ticket-sub">Begin the picture</span>
+          <span class="ticket-no" aria-hidden="true">Nº 001031</span>
+        </button>
+      </div>
 
       <p class="rating">Rated <span class="badge">H</span> for Horror &middot; No one admitted during the final reel</p>
     </section>
@@ -60,6 +67,13 @@
     <section id="screen-quiz" class="screen" hidden aria-labelledby="q-text">
       <div id="filmstrip" class="filmstrip" role="progressbar" aria-label="Survey progress" aria-valuemin="0" aria-valuemax="20" aria-valuenow="0"></div>
 
+      <figure class="host host-quiz">
+        <img class="reaper" src="img/cartoon-grim-reaper.png" alt="" width="337" height="400">
+        <figcaption id="host-quip" class="bubble" aria-live="polite"></figcaption>
+      </figure>
+
+      <div class="card-stage">
+      <img class="zombie-card" src="img/zombie-head.png" alt="" width="231" height="248">
       <article id="intertitle" class="intertitle">
         <header class="intertitle-head">
           <span id="reel-label">Reel 1</span>
@@ -70,6 +84,7 @@
         <div class="ornament" aria-hidden="true">&#10086; &#10022; &#10086;</div>
         <div id="options" class="options" role="group" aria-labelledby="q-text"></div>
       </article>
+      </div>
 
       <div class="quiz-nav">
         <button id="btn-back" class="btn-ghost" type="button">&larr; Rewind</button>
@@ -83,6 +98,10 @@
         <p class="presents">Tonight at the Bijou</p>
         <h2 id="results-h" class="deco">Your Halloween Bill</h2>
         <p class="tagline">A <span id="bill-count">Triple Feature</span> of terror, selected just for you</p>
+        <figure class="host host-results">
+          <img class="reaper" src="img/cartoon-grim-reaper.png" alt="" width="337" height="400">
+          <figcaption class="bubble">Your fate is sealed. Enjoy the show&hellip; while you can.</figcaption>
+        </figure>
       </header>
 
       <ol id="bill" class="bill"></ol>
@@ -91,7 +110,11 @@
         <button id="btn-share" class="btn-gold" type="button">Share my bill</button>
         <button id="btn-restart" class="btn-ghost" type="button">Run the reels again</button>
       </div>
-      <p class="fin">&mdash; Fin? &mdash;</p>
+      <div class="fin-wrap">
+        <p class="fin">&mdash; Fin? &mdash;</p>
+        <img class="zombie-rise" src="img/zombie-head.png" alt="A zombie rising from the grave: it's never really the end" width="231" height="248">
+        <div class="grave-dirt" aria-hidden="true"></div>
+      </div>
     </section>
 
   </main>

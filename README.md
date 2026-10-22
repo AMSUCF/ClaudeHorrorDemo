@@ -9,6 +9,7 @@ Answer 20 questions and you get a bill of **3–5 classic horror films** (1920�
 - **87 hand-tagged classics**, from *Nosferatu* and *Frankenstein* through Hammer, Corman/Poe, giallo, Japanese ghost stories and '70s grit to '80s VHS favourites.
 - **Weighted matching**: every answer adds or subtracts points for tags such as `vampire`, `slowburn`, `gore3` or `family`. Each pick shows a "fright match" meter and the reasons it made your bill.
 - **Retro cinema style**: chasing marquee bulbs, velvet curtains, a countdown leader, film grain, scratches and projector flicker, a film-strip progress bar and poster-style result cards. There's also an optional projector sound made with Web Audio.
+- **The Bijou staff**: a grim reaper usher greets you at the box office, hosts each question with a gallows-humour aside, and presents your bill. A zombie heckler hangs off the marquee, peeks over the question cards, and rises from the grave after "Fin?". The clipart is in [`img/`](img/).
 - **Shareable results**: the bill is saved in the URL (`#bill=…`), so you can send a link to your exact lineup.
 - Works with the keyboard (press `1`–`7` to answer, `←` to go back), fits phone screens, and respects `prefers-reduced-motion`.
 

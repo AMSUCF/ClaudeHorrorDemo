@@ -425,3 +425,27 @@ window.QUESTIONS = [
       { l: "The monster is the real star", w: {} }
     ] }
 ];
+
+// The reaper usher's patter, one line per question
+window.HOST_LINES = [
+  "Welcome, mortal. Let's start with when you'd like to be frightened.",
+  "I prefer black and white myself. It hides the stains.",
+  "Some of my finest work was done without a single spoken word.",
+  "Be honest now. I've mopped this floor before.",
+  "I'll know if you're bluffing. I always know.",
+  "Choose carefully. Whatever you invite in tends to stay.",
+  "Location, location, desolation.",
+  "Every nightmare starts somewhere. Where does yours start?",
+  "Yes, I have a sense of humour. Gallows humour, mostly.",
+  "Patience is a virtue. So is running.",
+  "Reel two is done. Now tell me what keeps you up at night.",
+  "Pack light. You won't be coming back for the rest.",
+  "Ah, the company you keep. I'll be keeping some of them.",
+  "Every picture has its palette. Mine is mostly black.",
+  "Squeamish? There's no shame in it. Well, a little shame.",
+  "Ever notice the quiet ones are always the children?",
+  "Endings are my speciality, if I may say so.",
+  "I have all the time in the world. Do you?",
+  "Popular or peculiar? I've collected both kinds.",
+  "Last one. Choose who'll host your final night."
+];
