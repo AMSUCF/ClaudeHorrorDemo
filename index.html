@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Midnight Matinee</title>
+  <meta name="description" content="Answer 20 questions and get a bill of 3–5 classic horror films for your Halloween viewing.">
+  <meta name="theme-color" content="#0b0806">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%83%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Limelight&family=Special+Elite&family=Creepster&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="curtain curtain-left" aria-hidden="true"></div>
+  <div class="curtain curtain-right" aria-hidden="true"></div>
+
+  <button id="btn-sound" class="sound" type="button" aria-pressed="false" title="Toggle projector sound">
+    <span aria-hidden="true">🎞</span> Projector sound: <span class="sound-state">Off</span>
+  </button>
+
+  <main class="screen-wrap">
+
+    <!-- Title card -->
+    <section id="screen-title" class="screen" aria-labelledby="title-h">
+      <div class="marquee">
+        <div class="bulbs" aria-hidden="true"></div>
+        <div class="bulbs bulbs-alt" aria-hidden="true"></div>
+        <p class="presents">The Bijou Picture House proudly presents</p>
+        <h1 id="title-h"><span class="drip">Midnight</span> <span class="deco">Matinee</span></h1>
+        <p class="tagline">A Classic Horror Picture Selector</p>
+      </div>
+
+      <div class="intro">
+        <p>Twenty questions stand between you and your Halloween double&nbsp;feature. Answer honestly&nbsp;&mdash; the projectionist will know.</p>
+        <p class="small">From the silent shadows of the 1920s to the VHS splatter of the 1980s, we'll pick <strong>3&ndash;5 classic horror films</strong> matched to your nerves, your stomach and your company.</p>
+      </div>
+
+      <button id="btn-start" class="ticket" type="button">
+        <span class="ticket-admit">Admit One</span>
+        <span class="ticket-sub">Begin the picture</span>
+        <span class="ticket-no" aria-hidden="true">Nº 001031</span>
+      </button>
+
+      <p class="rating">Rated <span class="badge">H</span> for Horror &middot; No one admitted during the final reel</p>
+    </section>
+
+    <!-- Countdown leader -->
+    <section id="screen-leader" class="screen leader" hidden aria-label="Countdown">
+      <div class="leader-ring">
+        <div id="leader-sweep" class="leader-sweep"></div>
+        <div class="leader-cross" aria-hidden="true"></div>
+        <span id="leader-num" class="leader-num">3</span>
+      </div>
+      <p class="leader-skip">Click to skip</p>
+    </section>
+
+    <!-- Survey -->
+    <section id="screen-quiz" class="screen" hidden aria-labelledby="q-text">
+      <div id="filmstrip" class="filmstrip" role="progressbar" aria-label="Survey progress" aria-valuemin="0" aria-valuemax="20" aria-valuenow="0"></div>
+
+      <article id="intertitle" class="intertitle">
+        <header class="intertitle-head">
+          <span id="reel-label">Reel 1</span>
+          <span id="q-count">Intertitle No. 1</span>
+        </header>
+        <div class="ornament" aria-hidden="true">&#10086; &#10022; &#10086;</div>
+        <h2 id="q-text" class="q-text"></h2>
+        <div class="ornament" aria-hidden="true">&#10086; &#10022; &#10086;</div>
+        <div id="options" class="options" role="group" aria-labelledby="q-text"></div>
+      </article>
+
+      <div class="quiz-nav">
+        <button id="btn-back" class="btn-ghost" type="button">&larr; Rewind</button>
+        <span class="hint">Tip: press a number key to answer</span>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section id="screen-results" class="screen" hidden aria-labelledby="results-h">
+      <header class="results-head">
+        <p class="presents">Tonight at the Bijou</p>
+        <h2 id="results-h" class="deco">Your Halloween Bill</h2>
+        <p class="tagline">A <span id="bill-count">Triple Feature</span> of terror, selected just for you</p>
+      </header>
+
+      <ol id="bill" class="bill"></ol>
+
+      <div class="results-actions">
+        <button id="btn-share" class="btn-gold" type="button">Share my bill</button>
+        <button id="btn-restart" class="btn-ghost" type="button">Run the reels again</button>
+      </div>
+      <p class="fin">&mdash; Fin? &mdash;</p>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Please silence your phones. Do not feed the creature. Happy Halloween from the Bijou.</p>
+  </footer>
+
+  <!-- Projected-film overlays -->
+  <div class="fx fx-vignette" aria-hidden="true"></div>
+  <div class="fx fx-grain" aria-hidden="true"></div>
+  <div class="fx fx-scratches" aria-hidden="true"></div>
+  <div class="fx fx-flicker" aria-hidden="true"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
